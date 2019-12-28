@@ -47,10 +47,10 @@ class Snake {
         this.x += this.xv;
         this.y += this.yv;
 
-        if (this.x > canvas.width) {
+        if (this.x >= canvas.width) {
             this.x = 0;
         }
-        else if (this.y > canvas.height) {
+        else if (this.y >= canvas.height) {
             this.y = 0;
         }
         else if (this.x < 0) {
