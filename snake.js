@@ -64,6 +64,10 @@ class Snake {
     checkCollision() {
         for (let i = 0; i < this.tail.length; i++) {
             if (this.x == this.tail[i].x && this.y == this.tail[i].y) {
+                let submit = window.confirm("Submit score?");
+                if (submit) {
+                    submitScore(score);
+                }
                 score = 0;
                 this.tail = [];
                 this.xv = 0;
