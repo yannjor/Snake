@@ -14,6 +14,8 @@ snakeHead.src = "img/head.png";
 
 let snake = new Snake();
 let food = new Food();
+let score = 0;
+
 food.spawn();
 
 
@@ -30,13 +32,20 @@ function drawAll() {
     snake.draw();
 
     if (snake.x == food.x && snake.y == food.y) {
+        score++;
         food.spawn();
     } else {
         snake.tail.pop();
     }
     snake.checkCollision();
+
+    //Score
+    context.fillStyle = "white";
+    context.font = "30px Arial";
+    context.fillText(score, tileCount, tileCount);
 }
 
-//draw every 100ms
 
+
+//draw every 100ms
 let game = setInterval(drawAll, 100);
