@@ -1,6 +1,6 @@
 const canvas = document.getElementById("snake");
 const context = canvas.getContext("2d");
-const tileSize = tileCount = 20;
+const tileSize = tileCount = 25;
 
 
 //Load images
