@@ -43,6 +43,7 @@ class Snake {
     }
 
     move() {
+        //add new head
         this.tail.unshift({ x: this.x, y: this.y });
         this.x += this.xv;
         this.y += this.yv;
@@ -61,6 +62,7 @@ class Snake {
         }
     }
 
+    //Chek if snake head collides with its body
     checkCollision() {
         for (let i = 0; i < this.tail.length; i++) {
             if (this.x == this.tail[i].x && this.y == this.tail[i].y) {

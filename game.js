@@ -1,6 +1,6 @@
 const canvas = document.getElementById("snake");
 const context = canvas.getContext("2d");
-const tileSize = tileCount = 25;
+const tileSize = tileCount = 20;
 
 
 //Load images
@@ -12,13 +12,14 @@ foodImage.src = "img/food.png";
 snakeBody.src = "img/body.png";
 snakeHead.src = "img/head.png";
 
+//Initialize
 let snake = new Snake();
 let food = new Food();
 let score = 0;
 
 food.spawn();
 
-
+//Bind the arrow keys to the snake's turn function
 document.addEventListener("keydown", ((event) => {
     const dir = event.key.replace('Arrow', '');
     snake.turn(dir);
@@ -41,11 +42,11 @@ function drawAll() {
 
     //Score
     context.fillStyle = "white";
-    context.font = "30px Arial";
+    context.font = "25px Arial";
     context.fillText(score, tileCount, tileCount);
 }
 
 
 
-//draw every 100ms
+//call draw every 100ms
 let game = setInterval(drawAll, 100);
